@@ -1,0 +1,265 @@
+/*
+	Assignment for Thinkful Front-end Dev Bootcamp
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Make everything border-box for easily applying padding and borders with percentile widths. */
+* {
+	box-sizing: border-box;
+}
+
+/**
+ * Prevent iOS text size adjust after orientation change, without disabling user zoom.
+ */
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+	background: #324D5C;
+	font-family: 'Noto Sans', sans-serif;
+	line-height: 1.4;
+	color: #fff;
+}
+/* These classes are added to body based on which quiz is loaded. */
+.html-quiz {
+	background: #F15930;
+}
+.css-quiz {
+	background: #007CC4;
+}
+.js-quiz {
+	background: #F0DB4F;
+}
+
+h1, h2 {
+	font-family: "Roboto Slab", serif;
+}
+
+/* Responsive images */
+img {
+	max-width: 100%;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+.masthead {
+	text-align: center;
+}
+h1, h2 {
+	margin-top: .5em;
+	text-align: center;
+	color: white;
+	font-size: 5em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: -.01em;
+}
+h1 span {
+	display: block;
+	font-size: .7em;
+}
+h2 {
+	font-size: 4em;
+	margin-top: .2em;
+}
+button {
+	cursor: pointer;
+	text-transform: uppercase;
+}
+.masthead p {
+	font-size: 1.2em;
+	margin: 1em 0 1em;
+	color: #ccc;
+}
+.tracks li {
+	float: left;
+	width: 30%;
+	margin-right: 3%;
+	text-align: center;
+}
+.tracks a {
+	display: block;
+}
+.tracks img {
+	display: block;
+	border-radius: 50%;
+	border: 5px solid #283d49;
+}
+.tracks a:hover img {
+	border-color: #61B5E5;
+}
+#content {
+	display: none;
+	padding-bottom: 2em;
+}
+.q-number,
+.total-score {
+	margin-top: .5em;
+	font-size: 1.8em;
+	text-align: center;
+}
+.total-score {
+	margin-top: 3em;
+}
+.q-number span,
+.total-score span {
+	display: inline-block;
+	height: 2em;
+	width: 2em;
+	margin: 0 .5em;
+	background: white;
+	border-radius: 50%;
+	line-height: 2em; /* Same as height */
+	color: #444;
+}
+#question-box {
+	padding: 1em;
+	margin: 1.5em 0 0;
+	background: #F5F5F5;
+	font-size: 1.2em;
+	color: #555;
+}
+.q-question {
+	font-size: 1.4em;
+	margin-bottom: 1em;
+}
+.q-container li {
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+}
+.q-container li label {
+	display: block;
+	padding: .5em 0;
+}
+.q-container li input {
+	height: 2em;
+	width: 2em;
+	margin-right: 1em;
+	display: block;
+	float: left;
+}
+.actions button {
+	display: block;
+	text-align: center;
+	padding: .5em 3em;
+	background: #32bd49;
+	margin: 1em auto;
+	font-size: 1em;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 2em;
+}
+.actions button:disabled {
+	background: #ccc;
+	color: #999;
+}
+.actions .next,
+.actions .view-results {
+	background: #0081DD;
+}
+.actions, #answerResult {
+	padding: .7em 0;
+	background: #F5F5F5;
+}
+#answerResult {
+	padding: .2em 0;
+	text-align: center;
+	font-size: 1.5em;
+	color: #333;
+}
+.actions p {
+	color: #5EC300;
+	text-align: center;
+	font-size: 1.4em;
+	text-transform: uppercase;
+}
+.wrongAnswer {
+	color: white;
+	background: #F06060;
+}
+.rightAnswer {
+	color: white;
+	background: #32bd49;
+}
+.close-button {
+	position: absolute;
+	top: .2em;
+	right: .2em;
+	font-size: 2em;
+	border: none;
+	background: none;
+	color: black;
+	opacity: .7;
+}
+.element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+@media screen and (max-width: 500px) {
+	body {
+		font-size: .7em;
+	}
+	.tracks li {
+		float: none;
+		width: 100%;
+		max-width: 200px;
+		margin: 2em auto;
+	}
+}
